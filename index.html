@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style_.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style_utils.css')}}">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      //To minimise the height of chatbox
+      $(document).ready(function() {
+          window.addEventListener('dfMessengerLoaded', function (event) {
+          $r1 = document.querySelector("df-messenger");
+          $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+          $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+          var sheet = new CSSStyleSheet;
+          // manage box height from here
+          sheet.replaceSync( `div.chat-wrapper[opened="true"] { height: 500px }`);
+          $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+          });
+      });
+  </script>
+
+<style> 
+
+    df-messenger { 
+    --df-messenger-bot-message: #FFA500; 
+    --df-messenger-button-titlebar-color: #006400; 
+    --df-messenger-chat-background-color:rgb(228, 224, 218); 
+    --df-messenger-font-color: #fff; 
+    --df-messenger-user-message:#006400;
+    --df-messenger-send-icon:#006400 } 
+    </style>
+
+
+
+</head>
+<body class="slider">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="static/CSS/logo1.jpg" alt="not loaded">
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <main>
+
+        <div class="container">
+            <div>
+                <div class="card text-color">
+                    <h2 class="my-2">Yummy Indian Food items</h2>
+                    <div class="cards">
+                        <div class="card-item">
+                            <img src="static/CSS/somosa.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Samosa(5$)</b></p>
+                                <p class="text-center my-1">Min 20% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+    
+                        <div class="card-item">
+                            <img src="static/CSS/lassi.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Mango Lasi(5$)</b></p>
+                                <p class="text-center my-1">Min 10% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+    
+                        <div class="card-item">
+                            <img src="static/CSS/biryani.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Vegetable Biryani(9$)</b></p>
+                                <p class="text-center my-1">Min 8% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="static/CSS/bhai.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Pav Bhaji(6$)</b>
+                                </p>
+                                <p class="text-center my-1">Min 10% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+
+                        <div class="card-item">
+                            <img src="static/CSS/pizza.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Pizza(8$)</b></p>
+                                <p class="text-center my-1">Min 15% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="static/CSS/vada.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Vada Pav(4$)</b></p>
+                                <p class="text-center my-1">Min 5% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="static/CSS/rava.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Rava Dosa(7$)</b></p>
+                                <p class="text-center my-1">Min 10% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="static/CSS/dosa.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Masala Dosa(6$)</b></p>
+                                <p class="text-center my-1">Min 10% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="static/CSS/chole.jpg" alt="" width="200px">
+                            <div class="lines">
+                                <p class="text-center my-1"><b>Chole Bhature(7$)</b></p>
+                                <p class="text-center my-1">Min 20% off</p>
+                                <p class="text-center my-1">Order Now!</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        
+
+    </main>
+
+
+
+    <footer class="flex-all-center">
+
+        <script class="chat-bot" src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <!-- intent="Default Welcome Intent" -->
+        <df-messenger
+          chat-title="YumYumChat🍴"
+          agent-id="7d37680b-e772-46cb-8ee6-34b39014639f"
+          language-code="en"
+        ></df-messenger>
+
+        <!-- since-justify content and align-items are properties of container so they are added in footer container -->
+        <p>Copyright &copy; YumYumChat🍴.com</p>
+    </footer>
+</body>
+</html>
