@@ -21,43 +21,43 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    res = {}
-    res['fulfillmentMessages'] = [
-        {
-            'text': {
-                'text': [
-                    'Sample text'
-                ]
-            }
-        },
-        {
-            'payload': {
-                "richContent": [
-                    [
-                        {
-                            "type": "button",
-                            "icon": {
-                                "type": "chevron_right",
-                                "color": "#FF9800"
-                            },
-                            "text": "Button text",
-                            "link": "https://example.com",
-                            "event": {
-                                "name": "",
-                                "languageCode": "",
-                                "parameters": {}
-                            }
-                        }
-                    ]
-                ]
-            }
-        }
-    ]
-    return json.dumps(
-        res
-    )
+# @app.route('/webhook', methods=['POST'])
+# def webhook():
+#     res = {}
+#     res['fulfillmentMessages'] = [
+#         {
+#             'text': {
+#                 'text': [
+#                     'Sample text'
+#                 ]
+#             }
+#         },
+#         {
+#             'payload': {
+#                 "richContent": [
+#                     [
+#                         {
+#                             "type": "button",
+#                             "icon": {
+#                                 "type": "chevron_right",
+#                                 "color": "#FF9800"
+#                             },
+#                             "text": "Button text",
+#                             "link": "https://example.com",
+#                             "event": {
+#                                 "name": "",
+#                                 "languageCode": "",
+#                                 "parameters": {}
+#                             }
+#                         }
+#                     ]
+#                 ]
+#             }
+#         }
+#     ]
+#     return json.dumps(
+#         res
+#     )
 
 
 if __name__ == "__main__":
